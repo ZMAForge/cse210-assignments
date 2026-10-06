@@ -1,4 +1,5 @@
 using System;
+using System.IO.Compression;
 
 class Program
 {
@@ -19,14 +20,17 @@ class Program
         //     Console.WriteLine(i);
         // }
 
-        List<string> myFriends = new List<string> {"bob", "betty", "bubba"};
+        // List<string> myFriends = new List<string> {"bob", "betty", "bubba"};
 
-        myFriends.Add("doug");
+        // myFriends.Add("doug");
 
-        foreach(string friend in myFriends)
+        // foreach(string friend in myFriends)
+        // {
+        //     Console.WriteLine(friend);
+        // }
+        
+        public  WriteToFile(string filename)
         {
-            Console.WriteLine(friend);
         }
-
     }
 }
