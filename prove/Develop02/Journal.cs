@@ -27,6 +27,8 @@ class Journal
 
     public void WriteToFile(string filename)
     {
+        Console.WriteLine($"Saving {_entries.Count} entries");
+        
         using (StreamWriter outputFile = new StreamWriter(filename))
         {
             foreach(JournalEntry entry in _entries)
@@ -42,13 +44,12 @@ class Journal
 
         foreach (string line in lines)
         {
-            string[] parts = line.Split("#");
-            string date = parts[0];
-            string question = parts[1];
-            string entryText = parts[2];
-
             JournalEntry entry = new JournalEntry();
-            entry.CreateFileSystemString(date, question, entryText);
+            string[] parts = line.Split("#");
+            entry._date = parts[0];
+            entry._prompt = parts[1];
+            entry._response = parts[2];
+
             _entries.Add(entry);
         }
     }
