@@ -7,10 +7,8 @@ class Journal
 
     public void DisplayJournal()
     {
-        Console.WriteLine("Display Journal Triggered");
         foreach(JournalEntry entry in _entries)
         {
-            Console.WriteLine("Trigger DisplayJournalEntry attempt");
             entry.DisplayJournalEntry();
         }
     }
