@@ -1,6 +1,6 @@
 using System.Runtime.CompilerServices;
 
-class Person
+abstract class Person
 {
     private string _firstname;
     private string _lastname;
@@ -15,8 +15,25 @@ class Person
         _weight = weight;
     }
 
-    public string GetPersonInformation()
+    public virtual string GetPersonInformation()
     {
         return $"{_firstname} {_lastname} is {_age} years old and {_weight} pounds";
     }
+
+    public static void DisplayPersonInformation(Person person)
+        {
+            if (person is Doctor d)
+            {
+                Console.WriteLine(d.GetPersonInformation());
+            }
+            else if (person is Police p)
+            {
+                Console.WriteLine(p.GetPersonInformation());
+            }
+            else
+            {
+            Console.WriteLine(person.GetPersonInformation());
+            }
+        }
+    public abstract double GetSalary();
 }
