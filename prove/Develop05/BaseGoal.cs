@@ -1,7 +1,7 @@
 using System.ComponentModel;
 using System.Dynamic;
 
-class BaseGoal
+abstract class BaseGoal
 {
     private string _name;
     private string _desc;
@@ -46,7 +46,12 @@ class BaseGoal
     }
     public virtual string GetConsoleString()
     {
-        return $"[ ] {_goalType} Goal Name: {_name}, Desc: {_desc}, Points: {_score}";
+        string completeString = " ";
+        if (_complete)
+        {
+            completeString = "X";
+        }
+        return $"[{completeString}] {_goalType} Goal Name: {_name}, Desc: {_desc}, Points: {_score}";
     }
 
     public int MarkComplete()
@@ -54,4 +59,6 @@ class BaseGoal
         _complete = true;
         return _score;
     }
+
+    public abstract int RecordEvent();
 }
