@@ -8,7 +8,9 @@ class EternalGoal : BaseGoal
         _numberOfCompletions = completions;
     }
     public EternalGoal():base("Eternal Goal")
-    {}
+    {
+        _numberOfCompletions = 0;
+    }
 
     public override int RecordEvent()
     {
@@ -18,6 +20,6 @@ class EternalGoal : BaseGoal
 
     public override string GetConsoleString()
     {
-        return $"[ ] Goal Name: {getName()}, Desc: {GetDescription()}, Points: {GetPoints()} \n Number of Completions: {_numberOfCompletions}";
+        return $"[ ] Goal Name: {GetName()}, Desc: {GetDescription()}, Points: {GetPoints()} \n Number of Completions: {_numberOfCompletions}";
     }
 }

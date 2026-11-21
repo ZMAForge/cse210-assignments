@@ -34,7 +34,7 @@ abstract class BaseGoal
         _name = Console.ReadLine();
     }
 
-    public string getName()
+    public string GetName()
     {
         return _name;
     }
@@ -58,6 +58,11 @@ abstract class BaseGoal
     public int GetPoints()
     {
         return _score;
+    }
+
+    public bool GetComplete()
+    {
+        return _complete;
     }
 
     public virtual string GetConsoleString()
