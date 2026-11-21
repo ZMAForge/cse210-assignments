@@ -34,16 +34,32 @@ abstract class BaseGoal
         _name = Console.ReadLine();
     }
 
+    public string getName()
+    {
+        return _name;
+    }
+
     private void SetDescription()
     {
         Console.WriteLine($"What is the description of {_name} goal: ");
         _desc = Console.ReadLine();
+    }
+
+    public string GetDescription()
+    {
+        return _desc;
     }
     private void SetPoints()
     {
         Console.WriteLine($"What is point value of {_name} goal: ");
         _score = int.Parse(Console.ReadLine());
     }
+
+    public int GetPoints()
+    {
+        return _score;
+    }
+
     public virtual string GetConsoleString()
     {
         string completeString = " ";
