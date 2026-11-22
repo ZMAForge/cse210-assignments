@@ -1,6 +1,6 @@
 class EternalGoal : BaseGoal
 {
-    int _numberOfCompletions;
+    private int _numberOfCompletions;
 
     public EternalGoal(string name, string description, int points, bool complete, string goaltype, int completions)
     :base (name, description, points, complete, goaltype)
@@ -10,6 +10,11 @@ class EternalGoal : BaseGoal
     public EternalGoal():base("Eternal Goal")
     {
         _numberOfCompletions = 0;
+    }
+
+    public override int GetCount()
+    {
+        return _numberOfCompletions;
     }
 
     public override int RecordEvent()

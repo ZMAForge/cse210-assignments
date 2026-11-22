@@ -1,8 +1,8 @@
 class CheckListGoal: BaseGoal
 {
-    int _numberOfCompletions;
-    int _maxGoal;
-    int _bonuspoints;
+    private int _numberOfCompletions;
+    private int _maxGoal;
+    private int _bonuspoints;
     public CheckListGoal(string name, string description, int points, 
     bool complete, string goaltype, int completions, int maxgoal)
     :base(name, description, points, complete, goaltype)
@@ -38,6 +38,20 @@ class CheckListGoal: BaseGoal
             return _bonuspoints;
         }
         else return 0;
+    }
+
+    public int GetMaxGoal()
+    {
+        return _maxGoal;
+    }
+
+    public override int GetCount()
+    {
+        if(_numberOfCompletions == _maxGoal)
+        {
+            return _numberOfCompletions + 1;
+        }
+        else return _numberOfCompletions;
     }
 
     public override string GetConsoleString()

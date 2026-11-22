@@ -64,6 +64,15 @@ abstract class BaseGoal
     {
         return _complete;
     }
+    public virtual  int GetCount()
+    {
+        return 0;
+    }
+
+    public string GetGoalType()
+    {
+        return _goalType;
+    }
 
     public virtual string GetConsoleString()
     {
