@@ -8,6 +8,7 @@ class Goals
     {
         Console.Write("What file should goals be read from and written to?\n  >");
         _filename = Console.ReadLine();
+        total_score = 0;
     }
 
     public void AddGoal(BaseGoal goal)

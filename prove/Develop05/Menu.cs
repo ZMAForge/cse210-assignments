@@ -27,7 +27,7 @@ class Menu
     public void DisplayMenu()
     {
         int response = 0;
-        while(response != 4)
+        while(response != 5)
         {
             Console.WriteLine($"Welcome to your goal tracker! Your current score is {myGoals.DisplayScore}");
             Console.WriteLine("Menu Options:\n  1. Create Goals");
@@ -56,6 +56,6 @@ class Menu
                     break;
             }
         }
-        Console.WriteLine("Thank you for practicing mindfulness! Have a good day!");
+        Console.WriteLine("Have a good day!");
     }
 }
