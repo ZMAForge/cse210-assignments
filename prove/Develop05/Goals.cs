@@ -101,6 +101,7 @@ class Goals
         foreach(BaseGoal goal in _goals)
         {
             Console.WriteLine($"{count}. {goal.GetName()}");
+            count += 1;
         }
         Console.Write("\n Which would you like to add a completion for? Enter the number: ");
         int spot = int.Parse(Console.ReadLine());
